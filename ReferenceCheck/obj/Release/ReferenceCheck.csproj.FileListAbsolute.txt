@@ -1,0 +1,9 @@
+C:\DMBDeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\bin\Release\ReferenceCheck.dll
+C:\DMBDeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\bin\Release\ReferenceCheck.pdb
+C:\DMBDeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\obj\Release\ReferenceCheck.dll
+C:\DMBDeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\obj\Release\ReferenceCheck.pdb
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\bin\Release\ReferenceCheck.dll
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\bin\Release\ReferenceCheck.pdb
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\obj\Release\ReferenceCheck.csproj.CoreCompileInputs.cache
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\obj\Release\ReferenceCheck.dll
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\obj\Release\ReferenceCheck.pdb

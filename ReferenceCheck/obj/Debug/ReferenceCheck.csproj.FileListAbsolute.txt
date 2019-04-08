@@ -1,0 +1,33 @@
+C:\Learning excercises\ReferenceCheck\ReferenceCheck\obj\Debug\ResolveAssemblyReference.cache
+C:\Learning excercises\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.dll
+C:\Learning excercises\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.pdb
+C:\Learning excercises\ReferenceCheck\ReferenceCheck\obj\Debug\ReferenceCheck.dll
+C:\Learning excercises\ReferenceCheck\ReferenceCheck\obj\Debug\ReferenceCheck.pdb
+C:\Application developments\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.dll
+C:\Application developments\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.pdb
+C:\Application developments\ReferenceCheck\ReferenceCheck\obj\Debug\ResolveAssemblyReference.cache
+C:\Application developments\ReferenceCheck\ReferenceCheck\obj\Debug\ReferenceCheck.dll
+C:\Application developments\ReferenceCheck\ReferenceCheck\obj\Debug\ReferenceCheck.pdb
+C:\Application developments\ReferenceCheck\ReferenceCheck\bin\Debug\DMBTools.dll
+C:\Application developments\ReferenceCheck\ReferenceCheck\bin\Debug\WrapperClass.dll
+C:\Application developments\ReferenceCheck\ReferenceCheck\bin\Debug\New Wrapper.dll
+C:\Application developments\ReferenceCheck\ReferenceCheck\bin\Debug\DMBTools.pdb
+C:\Application developments\ReferenceCheck\ReferenceCheck\bin\Debug\New Wrapper.pdb
+C:\Application developments\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.XML
+C:\DMBDeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.dll
+C:\DMBDeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.pdb
+C:\DMBDeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\obj\Debug\ReferenceCheck.dll
+C:\DMBDeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\obj\Debug\ReferenceCheck.pdb
+C:\DMBDeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.XML
+C:\DeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.XML
+C:\DeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.dll
+C:\DeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\bin\Debug\ReferenceCheck.pdb
+C:\DeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\obj\Debug\ReferenceCheck.dll
+C:\DeveloperShare\CommonComponents\ReferenceCheck\ReferenceCheck\obj\Debug\ReferenceCheck.pdb
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\bin\Debug\ReferenceCheck.XML
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\bin\Debug\ReferenceCheck.dll
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\bin\Debug\ReferenceCheck.pdb
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\obj\Debug\ReferenceCheck.csprojAssemblyReference.cache
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\obj\Debug\ReferenceCheck.csproj.CoreCompileInputs.cache
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\obj\Debug\ReferenceCheck.dll
+C:\Users\Scott\BDApp\ReferenceChecker\ReferenceCheck\obj\Debug\ReferenceCheck.pdb

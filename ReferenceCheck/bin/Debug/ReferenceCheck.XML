@@ -1,0 +1,1519 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReferenceCheck</name>
+    </assembly>
+    <members>
+        <member name="T:ReferenceCheck.ReferenceChecker">
+            <summary>
+            Base class for running checks on reference numbers
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.checkNumeric(System.String)">
+            <summary>
+            Checks if a character is a numeric
+            </summary>
+            <param name="passedCharacter">The character(s) to be checked for a numerical value</param>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks whether a reference number is valid
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>Either the validated reference number or an empty string</returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.weightedValue(System.String)">
+            <summary>
+            Calculate the value of the reference being checked. The weightable value is effectively converting
+            each character into a numerical value then producing a total of those values
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>The total value of the characters in the reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.checkCharacter(System.Int32)">
+            <summary>
+            Calculates a check character based on the total value of the characters in the reference
+            </summary>
+            <param name="value">The total value of the characters in the reference</param>
+            <returns>The check chracter which should apply to the reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.regularExpression">
+            <summary>
+            Returns the regular expression that determines the format of the reference
+            </summary>
+            <returns>The regular expression relevant to the reference type</returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.weightedValues">
+            <summary>
+            Returns the value to be applied against each character in the reference
+            </summary>
+            <returns>An integer array with the values to be applied </returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.possibleCCs">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.ccPosition">
+            <summary>
+            Returns the list of the possible check characters for the reference type
+            </summary>
+            <returns>A string containing the possible check characters</returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of the reference number
+            </summary>
+            <returns>An integer showing the expected length of the reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.modValue">
+            <summary>
+            Returns the tyep of modulus check that applies to a specified reference type
+            </summary>
+            <returns>An integer showing the modulus value to apply</returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.initialWeight">
+            <summary>
+            Returns any initial value that should be included when calculating the weight of a reference
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.ReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.CotaxReferenceChecker">
+            <summary>
+            Checks the validity of a COTAX reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.CotaxReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a COTAX reference
+            </summary>
+            <returns>A string containing a regular expression with the expected COTAX structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.CotaxReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.CotaxReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.CotaxReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.CotaxReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a COTAX reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.CotaxReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.CotaxReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.CotaxReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.SAReferenceChecker">
+            <summary>
+            Checks the validity of a SA reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.SAReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a SA reference
+            </summary>
+            <returns>A string containing a regular expression with the expected SA structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the SA reference
+            </summary>
+            <returns>An integer array - the order of the values match the order of the characters in the
+            reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a SAFE reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a SA reference number
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.SAReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number
+            </summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type) </returns>
+        </member>
+        <member name="M:ReferenceCheck.SAReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.PAYERReference">
+            <summary>
+            Checks the validity of a PAYE reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.PAYERReference.regularExpression">
+            <summary>
+            Returns the expected structure for a PAYE reference
+            </summary>
+            <returns>A string containing a regular expression with the expected PAYE structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.PAYERReference.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the PAYE reference
+            </summary>
+            <returns>An integer array - the order of the values match the order of the characters in the
+            reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.PAYERReference.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a PAYE reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.PAYERReference.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.PAYERReference.referenceLength">
+            <summary>
+            Returns the expected length of a PAYE reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.PAYERReference.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.PAYERReference.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number
+            </summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.PAYERReference.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.SAFEChargeReferenceChecker">
+            <summary>
+            Checks the validity of a SAFE reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.SAFEChargeReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a SAFE reference
+            </summary>
+            <returns>A string containing a regular expression with the expected SAFE structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFEChargeReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the SAFE reference
+            </summary>
+            <returns>An integer array - the order of the values match the order of the characters in the
+            reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFEChargeReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a SAFE reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFEChargeReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFEChargeReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a SAFE reference number
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFEChargeReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFEChargeReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number
+            </summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type) </returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFEChargeReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.SAFECARReferenceChecker">
+            <summary>
+            Checks the validity of a SAFE reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.SAFECARReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a SAFE reference
+            </summary>
+            <returns>A string containing a regular expression with the expected SAFE structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFECARReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the SAFE reference
+            </summary>
+            <returns>An integer array - the order of the values match the order of the characters in the
+            reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFECARReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a SAFE reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFECARReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFECARReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a SAFE reference number
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFECARReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFECARReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number
+            </summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type) </returns>
+        </member>
+        <member name="M:ReferenceCheck.SAFECARReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.ITCPReference">
+            <summary>
+            Checks the validity of an IT-CP reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.ITCPReference.regularExpression">
+            <summary>
+            Returns the expected structure for a IT-CP reference
+            </summary>
+            <returns>A string containing a regular expression with the expected IT-CP structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.ITCPReference.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the IT-CP reference
+            </summary>
+            <returns>An integer array - the order of the values match the order of the characters in the
+            reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.ITCPReference.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a IT-CP reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.ITCPReference.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.ITCPReference.referenceLength">
+            <summary>
+            Returns the expected length of a IT-CP reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.ITCPReference.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.ITCPReference.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number
+            </summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.ITCPReference.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.CTReferenceChecker">
+            <summary>
+            Checks the validity of a CT reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.CTReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a CT reference
+            </summary>
+            <returns>A string containing a regular expression with the expected CT structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.CTReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the CT reference
+            </summary>
+            <returns>An integer array - the order of the values match the order of the characters in the
+            reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.CTReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a CT reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.CTReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.CTReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a CT reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.CTReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.CTReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number
+            </summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.CTReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.NTCRReference">
+            <summary>
+            Checks the validity of a NTC reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.NTCRReference.regularExpression">
+            <summary>
+            Returns the expected structure for a NTC reference
+            </summary>
+            <returns>A string containing a regular expression with the expected NTC structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.NTCRReference.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the NTC reference
+            </summary>
+            <returns>An integer array - the order of the values match the order of the characters in the
+            reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.NTCRReference.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a NTC reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.NTCRReference.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NTCRReference.referenceLength">
+            <summary>
+            Returns the expected length of a NTC reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NTCRReference.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NTCRReference.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number
+            </summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.NTCRReference.CheckReferenceIncludingDate(System.String)">
+            <summary>
+            Verifies the NTC reference including ensuring that the date is earlier than today
+            </summary>
+            <param name="passedReference">The reference to be checked</param>
+            <returns>Either the validated reference or an empty string</returns>
+            <remarks>This should </remarks>
+        </member>
+        <member name="M:ReferenceCheck.NTCRReference.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.NINOReference">
+            <summary>
+            Checks the validity of a NINO
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.NINOReference.regularExpression">
+            <summary>
+            Returns the expected structure for a NTC reference
+            </summary>
+            <returns>A string containing a regular expression with the expected NTC structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReference.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the NTC reference
+            </summary>
+            <returns>An integer array - the order of the values match the order of the characters in the
+            reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReference.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a NTC reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReference.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReference.referenceLength">
+            <summary>
+            Returns the expected length of a NTC reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReference.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReference.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number
+            </summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReference.CheckNINO(System.String)">
+            Placeholder for minimal checking of a NINO until an EPID is located
+             <summary>
+             Verifies the NINO reference including ensuring that the date is earlier than today
+             </summary>
+             <param name="passedReference">The reference to be checked</param>
+             <returns>Either the validated reference or an empty string</returns>
+             <remarks>This should </remarks>
+        </member>
+        <member name="M:ReferenceCheck.NINOReference.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.SDLTReferenceChecker">
+            <summary>
+            Checks the validity of a SDLT reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.SDLTReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a SDLT reference
+            </summary>
+            <returns>A string containing a regular expression with the expected SDLT structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.SDLTReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the SDLT reference
+            </summary>
+            <returns>An integer array - the order of the values match the order of the characters in the
+            reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.SDLTReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a CT reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.SDLTReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.SDLTReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a CT reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.SDLTReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.SDLTReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number
+            </summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.SDLTReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.MOSS18ReferenceChecker">
+            <summary>
+            Checks the validity of a 18 character MOSS reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.MOSS18ReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for an 18 character MOSS reference
+            </summary>
+            <returns>A string containing a regular expression with the expected COTAX structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS18ReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS18ReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS18ReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS18ReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a MOSS reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS18ReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS18ReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS18ReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.MOSS17ReferenceChecker">
+            <summary>
+            Checks the validity of a 17 character MOSS reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.MOSS17ReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a 17 character MOSS reference
+            </summary>
+            <returns>A string containing a regular expression with the expected MOSS structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS17ReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS17ReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS17ReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS17ReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a MOSS reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS17ReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS17ReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS17ReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS17ReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks whether a reference number is valid
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>Either the validated reference number or an empty string</returns>
+        </member>
+        <member name="T:ReferenceCheck.NICOReferenceChecker">
+            <summary>
+            Checks the validity of a 18 character NICO reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.NICOReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a 18 character NICO reference
+            </summary>
+            <returns>A string containing a regular expression with the expected MOSS structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.NICOReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.NICOReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.NICOReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NICOReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a MOSS reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NICOReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NICOReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.NICOReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="M:ReferenceCheck.NICOReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks whether a reference number is valid
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>Either the validated reference number or an empty string</returns>
+        </member>
+        <member name="T:ReferenceCheck.MOSS15ReferenceChecker">
+            <summary>
+            Checks the validity of a 15 character MOSS reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.MOSS15ReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a 17 character MOSS reference
+            </summary>
+            <returns>A string containing a regular expression with the expected MOSS structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS15ReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS15ReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS15ReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS15ReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a MOSS reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS15ReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS15ReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS15ReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="M:ReferenceCheck.MOSS15ReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks whether a reference number is valid
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>Either the validated reference number or an empty string</returns>
+        </member>
+        <member name="T:ReferenceCheck.VAT11ReferenceChecker">
+            <summary>
+            Checks the validity of a 11 character VAT reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a 11 character VAT reference
+            </summary>
+            <returns>A string containing a regular expression with the expected VAT structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a VAT reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks whether a reference number is valid
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>Either the validated reference number or an empty string</returns>
+            <remarks>any spaces will be removed from the reference prior to checking the check character</remarks>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.weightedValue(System.String)">
+            <summary>
+            Calculate the value of the reference being checked. The weightable value is effectively converting
+            each character into a numerical value then producing a total of those values
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>The total value of the characters in the reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT11ReferenceChecker.checkCharacter(System.Int32)">
+            <summary>
+            Calculates a check character based on the total value of the characters in the reference
+            </summary>
+            <param name="value">The total value of the characters in the reference</param>
+            <returns>The check chracter which should apply to the reference</returns>
+        </member>
+        <member name="T:ReferenceCheck.VAT1155ReferenceChecker">
+            <summary>
+            Checks the validity of an 11 character VAT reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a 11 character VAT reference
+            </summary>
+            <returns>A string containing a regular expression with the expected VAT structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a VAT reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks whether a reference number is valid
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>Either the validated reference number or an empty string</returns>
+            <remarks>any spaces will be removed from the reference prior to checking the check character</remarks>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.weightedValue(System.String)">
+            <summary>
+            Calculate the value of the reference being checked. The weightable value is effectively converting
+            each character into a numerical value then producing a total of those values
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>The total value of the characters in the reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1155ReferenceChecker.checkCharacter(System.Int32)">
+            <summary>
+            Calculates a check character based on the total value of the characters in the reference
+            </summary>
+            <param name="value">The total value of the characters in the reference</param>
+            <returns>The check chracter which should apply to the reference</returns>
+        </member>
+        <member name="T:ReferenceCheck.VAT16ReferenceChecker">
+            <summary>
+            Checks the validity of an 11 character VAT reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a 11 character VAT reference
+            </summary>
+            <returns>A string containing a regular expression with the expected VAT structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a VAT reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks whether a reference number is valid
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>Either the validated reference number or an empty string</returns>
+            <remarks>any spaces will be removed from the reference prior to checking the check character</remarks>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.weightedValue(System.String)">
+            <summary>
+            Calculate the value of the reference being checked. The weightable value is effectively converting
+            each character into a numerical value then producing a total of those values
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>The total value of the characters in the reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT16ReferenceChecker.checkCharacter(System.Int32)">
+            <summary>
+            Calculates a check character based on the total value of the characters in the reference
+            </summary>
+            <param name="value">The total value of the characters in the reference</param>
+            <returns>The check chracter which should apply to the reference</returns>
+        </member>
+        <member name="T:ReferenceCheck.VAT1655ReferenceChecker">
+            <summary>
+            Checks the validity of a 15-16 character VAT reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a 11 character VAT reference
+            </summary>
+            <returns>A string containing a regular expression with the expected VAT structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a VAT reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks whether a reference number is valid
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>Either the validated reference number or an empty string</returns>
+            <remarks>any spaces will be removed from the reference prior to checking the check character</remarks>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.weightedValue(System.String)">
+            <summary>
+            Calculate the value of the reference being checked. The weightable value is effectively converting
+            each character into a numerical value then producing a total of those values
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns>The total value of the characters in the reference</returns>
+        </member>
+        <member name="M:ReferenceCheck.VAT1655ReferenceChecker.checkCharacter(System.Int32)">
+            <summary>
+            Calculates a check character based on the total value of the characters in the reference
+            </summary>
+            <param name="value">The total value of the characters in the reference</param>
+            <returns>The check chracter which should apply to the reference</returns>
+        </member>
+        <member name="T:ReferenceCheck.IHTReferenceChecker">
+            <summary>
+            Checks the validity of an IHT reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.IHTReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a COTAX reference
+            </summary>
+            <returns>A string containing a regular expression with the expected COTAX structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.IHTReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks that the reference matches the pattern for inheritance tax (no check character checks)
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.IHTReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.IHTReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.IHTReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.IHTReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a COTAX reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.IHTReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.IHTReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.IHTReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.UKVATReferenceChecker">
+            <summary>
+            Checks the validity of a VAT reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.UKVATReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a COTAX reference
+            </summary>
+            <returns>A string containing a regular expression with the expected COTAX structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.UKVATReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks that the reference matches the pattern for inheritance tax (no check character checks)
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.UKVATReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.UKVATReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.UKVATReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.UKVATReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a COTAX reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.UKVATReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.UKVATReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.UKVATReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <member name="T:ReferenceCheck.ExciseIdReferenceChecker">
+            <summary>
+            Checks the validity of a VAT reference
+            </summary>
+        </member>
+        <member name="M:ReferenceCheck.ExciseIdReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a COTAX reference
+            </summary>
+            <returns>A string containing a regular expression with the expected COTAX structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.ExciseIdReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks that the reference matches the pattern for inheritance tax (no check character checks)
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.ExciseIdReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the COTAX reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.ExciseIdReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a COTAX reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.ExciseIdReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.ExciseIdReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a COTAX reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.ExciseIdReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.ExciseIdReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.ExciseIdReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:ReferenceCheck.NINOReferenceChecker" -->
+        <member name="M:ReferenceCheck.NINOReferenceChecker.regularExpression">
+            <summary>
+            Returns the expected structure for a NINO reference
+            </summary>
+            <returns>A string containing a regular expression with the expected NINO structure</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReferenceChecker.checkReference(System.String)">
+            <summary>
+            Checks that the reference matches the pattern for NINO (no check character checks)
+            </summary>
+            <param name="reference">The reference to be checked</param>
+            <returns></returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReferenceChecker.weightedValues">
+            <summary>
+            Returns weight that applies to each character in the NINO reference
+            </summary>
+            <returns>An integer array</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReferenceChecker.possibleCCs">
+            <summary>
+            Returns the check characters that apply to a NINO reference
+            </summary>
+            <returns>A string - the order of the check characters are based on the associated remainder
+            following a modulus check</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReferenceChecker.ccPosition">
+            <summary>
+            Returns the position of the check character within the reference
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReferenceChecker.referenceLength">
+            <summary>
+            Returns the expected length of a NINO reference number
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReferenceChecker.modValue">
+            <summary>
+            Returns the nodulus value that applies when calculating the check character
+            </summary>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReferenceChecker.initialWeight">
+            <summary>
+            Returns the initial value to be used when calculating the 'weight' of the characters in the
+            reference number</summary>
+            <returns>An integer - 0 (there is no initial value required for this reference type)</returns>
+        </member>
+        <member name="M:ReferenceCheck.NINOReferenceChecker.ConvertedNumeric(System.String,System.Int32)">
+            <summary>
+            Converts an alpha character in the reference to a numeric - for reference types where alpha
+            characters form part of the weighted value for a reference number
+            </summary>
+            <param name="AlphaChar">The character to be converted to a numeric</param>
+            <param name="Multiplier">The weighted value to be applied to the alpha character</param>
+            <returns>An integer representing the associated value for the character</returns>
+        </member>
+    </members>
+</doc>
